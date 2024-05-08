@@ -4,25 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intro-HTML</title>
+    <title>Advanced-HTML</title>
 </head>
 <body>
-    <p>
-        <h1>Click the blue button</h1>
+     <h1>PR #2</h1>
+        <table border="4">
+            <form action="./submit.html" method="get" id="myform">
+              <tr>
+                  <th colspan="2"><h2>Isi Data Registrasi Berikut</h2></th>
+              </tr>
+              <tr>
+                <td>Nama Lengkap</td>
+                <td><input type="text" name="nama" id="nama" placeholder="Masukkan Nama Lengkap"></td>
+              </tr>
+              <tr>
+                <td>Tanggal Lahir</td>
+                <td><input type="date" name="birthday" id="birthday"></td>
+              </tr>
+              <tr>
+                <td>Jenis Kelamin</td>
+                <td>
+                    <input type="radio" name="gender">Laki laki
+                    <input type="radio" name="gender">Perempuan
+                </td>
+              </tr>
+              <tr>
+                <td>Nomor WA</td>
+                <td>
+                    <input
+                    placeholder="Masukkan Nomor WA" 
+                    type="text" name="nomorwa" id="nomorwa" 
+                    pattern="[62].[0-9]{10,13}"
+                    oninvalid="this.setCustomValidity('Mohon masukkan nomor WA diawali dengan 62')">
+                    
+                </td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" id="email" placeholder="Masukkan Email"></td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td><input type="password" name="pwd" id="pwd" placeholder="Masukkan Password"></td>
+              </tr>
+              <tr>
+                <td>File Resume</td>
+                <td><input type="file" name="cv" id="file" accept=".pdf" placeholder="Masukkan File .pdf"></td>
+              </tr>
+              <tr>
+                <th colspan="2"><input type="submit" value="Gaskeun"></th>
+              </tr>
+            </form>
+
+            <script>
+                function processForm() {
+                        const form = document.getElementById('myform');
+                        const formData = new FormData(form);
+                        const data = {};
     
-    </p>
+                        for (let [key, value] of formData) {
+                                data[key] = value;
+                        }
+    
+                        alert(`Name: ${data.nama}, Email: ${data.email}`);
+                }
+            </script>
+          
+          </table>
 
-    <a href="https://github.com/ajiepamungkasep/onxp-intro-html">
-        <svg width="100" height="100">
-            <circle cx="50" cy="50" r="50" stroke="white" stroke-width="50" fill="blue";/>
-        </svg>
-    </a>
-
-    <video width="320" height="240" controls>
-        <source src="movie.mp4" type="video/mp4">
-        <source src="movie.ogg" type="video/ogg">
-        Your browser does not support the video tag.
-    </video>
+    <div>
+      <iframe width="500" height="350" src="https://www.youtube.com/embed/mPpW_0wwEAA">
+      </iframe>
+    </div>
+              
 
 </body>
 </html>
